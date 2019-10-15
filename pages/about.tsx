@@ -5,22 +5,28 @@ import Header from "../components/Header";
 
 const CAREERS = [
   {
-    time: "Oct 2018 - present",
+    time: "Oct 2018 - Sept 2019",
     company: "Bukalapak",
-    role: "Software Engineer, Frontend",
-    description: "creating, maintaining website mitra.bukalapak.com with vue.js"
+    url: "https://bukalapak.com",
+    role: "Software Engineer, Frontend"
   },
   {
     time: "Jul 2018 - Oct 2018",
     company: "A Job Thing",
-    role: "Software Engineer, Frontend",
-    description: "Creating, maintaining website mitra.bukalapak.com with vue.js"
+    url: "https://ajobthing.com",
+    role: "Front end developer"
+  },
+  {
+    time: "Aug 2016 - Jun 2018",
+    company: "Arena.id",
+    url: "https://arena.id",
+    role: "Front end developer"
   },
   {
     time: "Aug 2016 - Jun 2018",
     company: "Sebangsa Network",
-    role: "Software Engineer, Frontend",
-    description: "Creating, maintaining website mitra.bukalapak.com with vue.js"
+    url: "https://sebangsa.com",
+    role: "Front end developer"
   }
 ];
 
@@ -37,17 +43,18 @@ const IndexPage: NextPage = () => {
             <h2>
               Lutfi Mukti <strong>Damaera</strong>
             </h2>
-            <p className="title">Software Engineer</p>
+            <p className="title">
+              <i>Software Engineer</i>
+            </p>
 
             <h3>Careers</h3>
             {CAREERS.map((career, index) => (
               <div className="career" key={index}>
-                <div className="company">{career.company}</div>
+                <a target="_blank" href={career.url}>
+                  <div className="company">{career.company}</div>
+                </a>
                 <div className="time">{career.time}</div>
                 <div className="role">{career.role}</div>
-                <p>
-                  <div>{career.description}</div>
-                </p>
               </div>
             ))}
           </div>
@@ -80,17 +87,19 @@ const IndexPage: NextPage = () => {
         .work {
           padding: 20px;
         }
+        .role {
+          font-style: italic;
+        }
         .career {
-          padding-top: 20px;
+          padding-bottom: 30px;
         }
         .career .company {
           font-weight: bold;
           padding-bottom: 5px;
-          font-size: 1.1em;
+          font-size: 1.2rem;
         }
-        .career p {
-          margin-top: 5px;
-          font-size: 18px;
+        .company:hover {
+          text-decoration: underline;
         }
         @media screen and (max-width: 1000px) {
           .about {

@@ -8,7 +8,9 @@ function Header() {
       <header className="flex">
         <Link href="/">
           <a>
-            <h1>Damaera</h1>
+            <h1>
+              D<span>amaera</span>
+            </h1>
           </a>
         </Link>
         <div className="flex nav">
@@ -31,10 +33,19 @@ function Header() {
         </div>
         <style jsx>{`
           header {
-            padding: 20px;
           }
           h1 {
             margin: 0;
+            font-weight: 800;
+          }
+          h1 span {
+            opacity: 0;
+          }
+          h1:hover span {
+            opacity: 1;
+          }
+          h1:hover {
+            text-decoration: underline;
           }
           @media screen and (max-width: 1000px) {
             h1 {
@@ -48,8 +59,8 @@ function Header() {
           }
          .nav span {
            padding: 10px 10px;
-           font-size: .8rem;
-           font-weight: bold;
+           font-size: 1rem;
+           font-weight: 600;
            cursor: pointer;
          }
          .nav span:hover {

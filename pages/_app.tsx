@@ -1,7 +1,11 @@
 import App, { Container } from "next/app";
 import React from "react";
 //@ts-ignore
+import { MDXProvider } from "@mdx-js/react";
+//@ts-ignore
 import MorphTransition from "nextjs-morph-page";
+
+import MDXComponents from "../components/MDXComponents";
 
 export default class MyApp extends App {
   //@ts-ignore
@@ -19,12 +23,13 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <MorphTransition timeout={300} classNames="morph">
-          <Component {...pageProps} />
-        </MorphTransition>
+        <MDXProvider components={MDXComponents}>
+          <MorphTransition timeout={300} classNames="morph">
+            <Component {...pageProps} />
+          </MorphTransition>
+        </MDXProvider>
         <style jsx global>{`
-           {
-            /* .morph.enter {
+          .morph.enter {
             opacity: 0;
           }
           .morph.enter.active {
@@ -37,7 +42,6 @@ export default class MyApp extends App {
           .morph.exit.active {
             opacity: 0;
             transition: opacity 300ms;
-          } */
           }
         `}</style>
       </Container>

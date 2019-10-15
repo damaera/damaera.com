@@ -3,27 +3,6 @@ import { NextPage } from "next";
 import ParticleLogo from "../components/ParticleLogo";
 import Header from "../components/Header";
 
-const CAREERS = [
-  {
-    time: "Oct 2018 - present",
-    company: "Bukalapak",
-    role: "Software Engineer, Frontend",
-    description: "creating, maintaining website mitra.bukalapak.com with vue.js"
-  },
-  {
-    time: "Jul 2018 - Oct 2018",
-    company: "A Job Thing",
-    role: "Software Engineer, Frontend",
-    description: "Creating, maintaining website mitra.bukalapak.com with vue.js"
-  },
-  {
-    time: "Aug 2016 - Jun 2018",
-    company: "Sebangsa Network",
-    role: "Software Engineer, Frontend",
-    description: "Creating, maintaining website mitra.bukalapak.com with vue.js"
-  }
-];
-
 const IndexPage: NextPage = () => {
   return (
     <div>
@@ -38,7 +17,9 @@ const IndexPage: NextPage = () => {
           <h2>
             Lutfi Mukti <strong>Damaera</strong>
           </h2>
-          <p className="title">Software Engineer</p>
+          <p className="title">
+            <i>Software Engineer</i>
+          </p>
         </div>
       </div>
       <style jsx>{`

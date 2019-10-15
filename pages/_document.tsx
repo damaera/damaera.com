@@ -15,10 +15,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <link
-            href="https://fonts.googleapis.com/css?family=Crimson+Pro|Red+Hat+Display:400,700&display=block"
+          <link
+            href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,600i,800,800i&display=block"
             rel="stylesheet"
-          /> */}
+          />
           <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
         </Head>
         <body>
