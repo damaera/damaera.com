@@ -3,6 +3,8 @@ import { NextPage } from "next";
 import ParticleLogo from "../components/ParticleLogo";
 import Header from "../components/Header";
 
+import { client } from "../components/prismic";
+
 const IndexPage: NextPage = () => {
   return (
     <div>
@@ -54,6 +56,12 @@ const IndexPage: NextPage = () => {
       `}</style>
     </div>
   );
+};
+
+IndexPage.getInitialProps = async () => {
+  const res = await client.query("", {});
+  console.log(res);
+  return {};
 };
 
 export default IndexPage;
