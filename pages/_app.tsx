@@ -22,7 +22,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Container>
+      <>
         <MDXProvider components={MDXComponents}>
           <MorphTransition timeout={300} classNames="morph">
             <Component {...pageProps} />
@@ -44,7 +44,7 @@ export default class MyApp extends App {
             transition: opacity 300ms;
           }
         `}</style>
-      </Container>
+      </>
     );
   }
 }

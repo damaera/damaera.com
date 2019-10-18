@@ -13,15 +13,9 @@ function GlobalStyle() {
         }
         html {
           font-family: "EB Garamond", serif;
-           {
-            /* font-family: "Red Hat Display", system-ui, -apple-system, "Segoe UI",
-            "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
-            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-            "Noto Color Emoji"; */
-          }
+          font-variant-numeric: oldstyle-nums;
         }
         p {
-          font-family: "EB Garamond", serif;
           font-size: 18px;
         }
         *,

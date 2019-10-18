@@ -8,9 +8,7 @@ function Header() {
       <header className="flex">
         <Link href="/">
           <a>
-            <h1>
-              D<span>amaera</span>
-            </h1>
+            <h1>D</h1>
           </a>
         </Link>
         <div className="flex nav">
@@ -37,12 +35,6 @@ function Header() {
           h1 {
             margin: 0;
             font-weight: 800;
-          }
-          h1 span {
-            opacity: 0;
-          }
-          h1:hover span {
-            opacity: 1;
           }
           h1:hover {
             text-decoration: underline;

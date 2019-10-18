@@ -1,34 +1,110 @@
 import * as React from "react";
 import { NextPage } from "next";
 
-import Header from "../../components/Header";
 import Link from "next/link";
 
-const ARTICLES = [
-  {
-    title: "How i create this site",
-    desc: "Rebuilding this site with Next.js and MDX",
-    url: "2019-10-12-how-i-create-this-site"
-  }
-];
+import Header from "../../components/Header";
 
-const BlogIndexPage: NextPage = () => {
+import { client, Prismic } from "../../components/prismic";
+//@ts-ignore
+import { Link as BlogLink, RichText, Date } from "prismic-reactjs";
+const BlogIndexPage: NextPage = (props: any) => {
   return (
     <div>
       <Header />
-      <div className="wrapper">
-        {ARTICLES.map((article, i) => (
-          <Link href={`/blog/${article.url}`} key={i}>
-            <div id={`blog-${article.url}`} data-morph-ms="300">
-              <h3>{article.title}</h3>
-              <p>{article.desc}</p>
-            </div>
-          </Link>
-        ))}
+      <div className="wrapper flex">
+        <div className="filter-wrapper">
+          <h2 className="title">
+            Programming, <br />
+            Science <em>&</em> Others
+          </h2>
+          <p>Coretan</p>
+          <form>
+            <input type="text" />
+          </form>
+        </div>
+        <div className="blog-wrapper">
+          {props.documents.results.map((doc: any) => (
+            <>
+              <div className="blog-item">
+                <h3>{RichText.asText(doc.data.title)}</h3>
+                <p>{RichText.asText(doc.data.description)}</p>
+                <div>
+                  {new Intl.DateTimeFormat("id", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                  }).format(Date(doc.first_publication_date))}
+                </div>
+              </div>
+              <div className="blog-item">
+                <h3>{RichText.asText(doc.data.title)}</h3>
+                <p>{RichText.asText(doc.data.description)}</p>
+                <div>
+                  {new Intl.DateTimeFormat("id", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                  }).format(Date(doc.first_publication_date))}
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
       </div>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        input {
+        }
+        .flex {
+          flex-wrap: wrap;
+        }
+        h2.title {
+          font-weight: 200;
+          font-size: 3.2em;
+          margin-bottom: 0;
+        }
+        .filter-wrapper {
+          max-width: 500px;
+          margin-right: 40px;
+        }
+        .blog-wrapper {
+          flex: 1;
+          min-width: 200px;
+          max-width: 500px;
+          padding-top: 40px;
+        }
+        .blog-item {
+          border-bottom: solid 1px #ddd;
+          padding: 20px 0;
+        }
+        .blog-item h3 {
+          font-size: 1.5rem;
+          margin: 0;
+        }
+        .blog-item p {
+          margin: 0;
+          padding: 5px 0;
+        }
+        .blog-item div {
+          font-size: 0.8em;
+          font-style: italic;
+        }
+      `}</style>
     </div>
   );
+};
+
+BlogIndexPage.getInitialProps = async ctx => {
+  try {
+    const documents = await client.query(
+      Prismic.Predicates.at("document.type", "article-blog"),
+      {}
+    );
+    return { documents };
+  } catch (e) {
+    console.log(e);
+    return {};
+  }
 };
 
 export default BlogIndexPage;
