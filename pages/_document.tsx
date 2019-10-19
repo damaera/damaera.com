@@ -14,6 +14,50 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>Lutfi Mukti Damaera — Software Engineer</title>
+          <meta
+            name="description"
+            content="Personal website and Blog by Damaera. Frontend Developer, Software Engineer & Science Enthusiast."
+          />
+
+          <meta property="og:title" content="Damaera, Software Engineer" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://damaera.com" />
+          <meta
+            property="og:image"
+            content="https://damaera.com/static/android-chrome-512x512.jpg"
+          />
+          <meta
+            property="og:description"
+            content="Personal website and Blog by Damaera. Frontend Developer, Software Engineer & Science Enthusiast."
+          />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Damaera, Software Engineer" />
+          <meta name="twitter:creator" content="@vamaera" />
+          <meta
+            name="twitter:description"
+            content="Personal website and Blog by Damaera. Frontend Developer, Software Engineer & Science Enthusiast."
+          />
+
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/static/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/static/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/static/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/static/site.webmanifest"></link>
           <link
             href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,800&display=block"
             rel="stylesheet"
