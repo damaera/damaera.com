@@ -4,14 +4,10 @@ import ParticleLogo from "../components/ParticleLogo";
 import Header from "../components/Header";
 
 import { client } from "../components/prismic";
-import Head from "next/head";
 
 const IndexPage: NextPage = () => {
   return (
     <div>
-      <Head>
-        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
-      </Head>
       <Header />
       <div className="wrapper">
         <div className="particle-wrap">
