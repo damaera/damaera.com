@@ -16,10 +16,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,600i,800,800i&display=block"
+            href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,800&display=block"
             rel="stylesheet"
           />
-          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
         </Head>
         <body>
           <Main />
