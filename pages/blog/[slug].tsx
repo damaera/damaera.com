@@ -6,36 +6,15 @@ import { Link as PrismicLink, RichText, Date } from "prismic-reactjs";
 
 import Header from "../../components/Header";
 import Link from "next/link";
-import { client, Prismic } from "../../components/prismic";
+import { client } from "../../components/prismic";
+import ArticleRenderer from "../../components/ArticleRenderer";
 
-interface DataContent {
-  content: any;
-  title: any;
-}
-
-interface BlogSlugProps {
-  document?: {
-    id: string;
-    uid?: string;
-    type: string;
-    href: string;
-    tags: string[];
-    slugs: string[];
-    lang?: string;
-    alternate_languages: string[];
-    first_publication_date: string | null;
-    last_publication_date: string | null;
-    data: DataContent;
-  };
-}
-
-const BlogSlugPage: NextPage<BlogSlugProps> = props => {
-  console.log(props.document);
+const BlogSlugPage: NextPage<any> = ({ document }) => {
   return (
     <div>
       <Header />
-      <div>
-        <RichText render={props.document && props.document.data.content} />
+      <div className="wrapper">
+        <ArticleRenderer document={document} />
       </div>
       <style jsx>{``}</style>
     </div>

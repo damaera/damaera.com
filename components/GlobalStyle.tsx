@@ -18,6 +18,31 @@ function GlobalStyle() {
         p {
           font-size: 18px;
         }
+        blockquote p {
+          font-size: 24px;
+        }
+        pre,
+        code {
+          font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
+            monospace;
+        }
+        em strong,
+        strong em {
+          font-family: monospace;
+          font-weight: normal;
+          font-size: 0.7em;
+          font-style: normal;
+          padding: 2px 5px;
+          border-radius: 2px;
+          border: solid 1px #ddd;
+          background: #e6e6e6;
+        }
+        iframe {
+          max-width: 100%;
+        }
+        p a {
+          text-decoration: underline;
+        }
         *,
         ::before,
         ::after {

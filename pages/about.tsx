@@ -2,6 +2,7 @@ import * as React from "react";
 import { NextPage } from "next";
 import ParticleLogo from "../components/ParticleLogo";
 import Header from "../components/Header";
+import Head from "next/head";
 
 const CAREERS = [
   {
@@ -33,6 +34,9 @@ const CAREERS = [
 const IndexPage: NextPage = () => {
   return (
     <div>
+      <Head>
+        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+      </Head>
       <Header />
       <div className="wrapper">
         <div className="about flex" id="profile" data-morph-ms="300">
