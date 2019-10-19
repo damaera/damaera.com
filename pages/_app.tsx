@@ -2,6 +2,7 @@ import App, { Container } from "next/app";
 import React from "react";
 //@ts-ignore
 import MorphTransition from "nextjs-morph-page";
+import GlobalStyle from "../components/GlobalStyle";
 
 export default class MyApp extends App {
   //@ts-ignore
@@ -19,6 +20,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <>
+        <GlobalStyle />
         <MorphTransition timeout={300} classNames="morph">
           <Component {...pageProps} />
         </MorphTransition>

@@ -23,7 +23,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <GlobalStyle />
         </body>
       </Html>
     );
