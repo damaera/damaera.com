@@ -22,10 +22,10 @@ const BlogIndexPage: NextPage = (props: any) => {
             Programming, <br />
             Science <em>&</em> Others
           </h2>
-          <p>Coretan</p>
+          {/* <p>Coretan</p>
           <form>
             <input type="text" />
-          </form>
+          </form> */}
         </div>
         <div className="blog-wrapper">
           {props.documents.results.map((doc: any) => (

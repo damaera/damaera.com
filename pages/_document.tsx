@@ -4,7 +4,6 @@
 // ./pages/_document.js
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import GlobalStyle from "../components/GlobalStyle";
-
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -19,6 +18,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,800&display=block"
             rel="stylesheet"
           />
+          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
         </Head>
         <body>
           <Main />
