@@ -4,9 +4,22 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { client, Prismic } from "./prismic";
+import SyntaxHighlighter from "react-syntax-highlighter";
 
 //@ts-ignore
 import { Link as PrismicLink, RichText, Date } from "prismic-reactjs";
+
+let theme: any;
+try {
+  let {
+    atomOneDark
+  } = require("react-syntax-highlighter/dist/esm/styles/hljs");
+  theme = atomOneDark;
+} catch (e) {
+  console.log(e);
+}
+
+console.log(theme);
 
 interface Image {
   url: string;
@@ -196,12 +209,12 @@ function Block({ body }: { body: Body }) {
       );
 
     case "code__block":
-      const { content: codeContent } = body.primary;
+      const { content: codeContent, syntax } = body.primary;
       return (
         <ArticleWrapper>
-          <pre>
-            <code>{RichText.asText(codeContent)}</code>
-          </pre>
+          <SyntaxHighlighter language={syntax} style={theme}>
+            {RichText.asText(codeContent)}
+          </SyntaxHighlighter>
         </ArticleWrapper>
       );
 

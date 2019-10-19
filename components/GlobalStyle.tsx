@@ -21,6 +21,11 @@ function GlobalStyle() {
         blockquote p {
           font-size: 24px;
         }
+        pre,
+        code {
+          font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier,
+            monospace;
+        }
         em strong,
         strong em {
           font-family: monospace;
