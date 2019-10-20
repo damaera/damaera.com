@@ -88,21 +88,42 @@ function Block({ body }: { body: Body }) {
       return (
         <div className="article-image">
           <figure>
-            <img src={image.url} />
-            <div>
-              <RichText render={caption} />
+            <div className="img-wrapper">
+              <img src={image.url} />
             </div>
+            <caption>
+              <RichText render={caption} />
+            </caption>
           </figure>
           <style jsx>
             {`
               .article-image {
-                max-width: 600px;
+                 {
+                  /* max-width: 600px; */
+                }
                 margin: 0 auto;
-                border: solid 1px #ddd;
+                position: relative;
               }
+
+              .img-wrapper {
+                width: 100%;
+                padding-top: ${(image.dimensions.height /
+                  image.dimensions.width) *
+                  100}%;
+                position: relative;
+              }
+
+              figure {
+                padding: 0;
+              }
+
               .article-image img {
                 width: 100%;
-                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
               }
             `}
           </style>
@@ -226,10 +247,15 @@ function Block({ body }: { body: Body }) {
 
 function ArticleRenderer({ document }: Props) {
   return (
-    <div>
+    <div className="article">
       <ArticleWrapper>
-        <h1>{RichText.asText(document!.data.title)}</h1>
-        <p>{RichText.asText(document!.data.description)}</p>
+        <h1 className="article-title">
+          {RichText.asText(document!.data.title)}
+        </h1>
+        <p className="article-desc">
+          {RichText.asText(document!.data.description)}
+        </p>
+
         <style jsx>{`
           h1 {
             font-weight: 200;

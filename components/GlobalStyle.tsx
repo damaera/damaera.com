@@ -18,6 +18,7 @@ function GlobalStyle() {
         p {
           font-size: 18px;
         }
+
         blockquote p {
           font-size: 24px;
         }
@@ -65,6 +66,29 @@ function GlobalStyle() {
         }
         * {
           transition: all 0.2s;
+        }
+
+        .article p,
+        .article li {
+          font-size: 20px;
+          line-height: 1.6;
+        }
+        .article h4 {
+          font-size: 1.4rem;
+          margin-bottom: 0;
+        }
+        .article caption {
+          display: block;
+          width: 100%;
+          padding: 10px;
+        }
+        .article caption p {
+          font-size: 1rem;
+          margin: 0;
+        }
+        p.article-desc {
+          margin-top: 5px;
+          font-size: 1.6rem;
         }
       `}</style>
     </div>
