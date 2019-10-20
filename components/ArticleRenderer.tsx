@@ -238,8 +238,8 @@ function ArticleRenderer({ document }: Props) {
         `}</style>
       </ArticleWrapper>
 
-      {document!.data.body!.map(body => (
-        <Block body={body} />
+      {document!.data.body!.map((body, i) => (
+        <Block body={body} key={i} />
       ))}
     </div>
   );
