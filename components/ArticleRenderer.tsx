@@ -9,18 +9,6 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 //@ts-ignore
 import { Link as PrismicLink, RichText, Date } from "prismic-reactjs";
 
-let theme: any;
-try {
-  let {
-    atomOneDark
-  } = require("react-syntax-highlighter/dist/esm/styles/hljs");
-  theme = atomOneDark;
-} catch (e) {
-  console.log(e);
-}
-
-console.log(theme);
-
 interface Image {
   url: string;
   dimensions: {
@@ -84,6 +72,8 @@ function ArticleWrapper(props: any) {
     </div>
   );
 }
+
+let theme: any;
 
 function Block({ body }: { body: Body }) {
   switch (body.slice_type) {
@@ -209,6 +199,17 @@ function Block({ body }: { body: Body }) {
       );
 
     case "code__block":
+      React.useEffect(() => {
+        try {
+          let {
+            atomOneDark
+          } = require("react-syntax-highlighter/dist/esm/styles/hljs");
+          theme = atomOneDark;
+        } catch (e) {
+          console.log(e);
+        }
+      }, []);
+
       const { content: codeContent, syntax } = body.primary;
       return (
         <ArticleWrapper>
